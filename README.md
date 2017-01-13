@@ -27,9 +27,9 @@ cd Multi-project-pages-webpack
 # Install dependencies
 npm install
 # init the project
-npm run init --src projectName
+npm run init -- --src projectName
 # dev 
-npm run dev --src projectName
+npm run dev -- --src projectName
 #build
-npm run build --src projectName
+npm run build -- --src projectName
 ```
