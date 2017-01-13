@@ -14,6 +14,7 @@
         - js
         - css
         - demo.html
+    - project2
 
 ### Usage
 
