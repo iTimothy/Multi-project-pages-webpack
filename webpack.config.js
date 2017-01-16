@@ -55,7 +55,10 @@ module.exports = {
 	            test: /\.css$/,
 	            loader: extractCSS.extract(['css','postcss'])
 	        },
-	        {test: /\.ejs$/, loader: 'ejs-compiled?htmlmin'},
+	        {
+	        	test: /\.ejs$/, 
+	        	loader: 'ejs-compiled?src='+path.join(projectSrc,'views/')
+	        },
 	        {
 	            test: /\.js$/,
 	            exclude: /node_modules/,
@@ -77,11 +80,11 @@ module.exports = {
         ]
     },
     'ejs-compiled-loader': {
-	  'htmlmin': false, // or enable here  
-	  'htmlminOptions': {
-	    removeComments: true
-	  }
-	 },
+		'htmlmin': false,
+		'htmlminOptions': {
+			removeComments: true
+		}
+	},
     postcss:[autoprefixer()],
     plugins:plugins,
 	devServer: {

@@ -7,8 +7,10 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div>demo</div>
-   	<img src="<%= require("../images/img.jpg") %>" alt="">
-   	<%- include actSrc/example/src/views/ul.ejs -%> 
+    <div>测试</div>
+   	<img src="<%= require("../images/img.jpg") %>" alt="" class="img">
+   	<% include views/ul.ejs %> 
+   	<% include views/footer.ejs %> 
+
   </body>
 </html>
