@@ -7,8 +7,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var isProd = base.isProd;
 
-var dist = path.join(__dirname, 'actSrc', base.projectName);
-var projectSrc = path.join(__dirname, 'actSrc', base.projectName,'src/');
+var dist = path.join(__dirname, base.root, base.projectName);
+var projectSrc = path.join(__dirname, base.root, base.projectName,'src/');
 
 var extractCSS = new ExtractTextPlugin('css/[name].css?[hash:8]');
 var extractSASS = new ExtractTextPlugin('css/[name].css?[hash:8]');
@@ -64,7 +64,8 @@ module.exports = {
 	            exclude: /node_modules/,
 	            loader: 'babel-loader',
 	            query: {
-	                presets: ['es2015', 'stage-2']
+	                presets: ['es2015', 'stage-2'],
+	                cacheDirectory:''
 	            }
 	        }, 
 	        {

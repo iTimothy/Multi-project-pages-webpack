@@ -53,9 +53,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	__webpack_require__(2);
-	
-	
-	var lib = 'actSrc/example/src';
 
 /***/ },
 /* 1 */

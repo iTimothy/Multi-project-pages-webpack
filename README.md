@@ -9,7 +9,7 @@
             - css (css文件)
             - js (js文件)
             - views (模版页面)
-            - page.json (模版页面配置) 
+            - page.js (模版页面配置) 
         - images
         - js
         - css

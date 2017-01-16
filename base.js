@@ -1,7 +1,9 @@
 var files = [];
-var path = require('path'),
-    fs = require('fs'),
-    minimist = require('minimist');
+var path = require('path');
+var fs = require('fs');
+var minimist = require('minimist');
+
+var root = 'actSrc';
 
 var argv = minimist(process.argv.slice(2), {
     string: ['src', 'mode']
@@ -22,14 +24,14 @@ var ScanDir = function(path) {
     } catch (e) {}
 };
 
-var projectList = fs.readdirSync('./actSrc');
+var projectList = fs.readdirSync('./'+root);
 
 if (projectList.indexOf(src) < 0) {
     console.error('project not found');
     process.exit();
 }
 
-var project = path.join(__dirname,'actSrc',src);
+var project = path.join(__dirname,root,src);
 var pageConfigFile = path.join(project,'src','page.js');
 
 var isExists = fs.existsSync(pageConfigFile);
@@ -87,5 +89,6 @@ module.exports = {
 	projectName: src,
 	sourceList: sourceList,
 	pageConfig: pageConfig,
-	isProd: isProd
+	isProd: isProd,
+	root: root
 };
