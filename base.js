@@ -30,15 +30,17 @@ if (projectList.indexOf(src) < 0) {
 }
 
 var project = path.join(__dirname,'actSrc',src);
-var pageConfigPath = path.join(project,'src','page.json');
+var pageConfigFile = path.join(project,'src','page.js');
 
-var isExists = fs.existsSync(pageConfigPath);
+var isExists = fs.existsSync(pageConfigFile);
 if(!isExists){
-	console.error('page.json not found!');
+	console.error('page.js not found!');
 	process.exit()
 }
 
-var pageConfig = JSON.parse(fs.readFileSync(pageConfigPath,'utf-8')).pageList;
+// var pageConfig = JSON.parse(fs.readFileSync(pageConfigFile,'utf-8')).pageList;
+var pageConfig = require(pageConfigFile);
+
 
 ScanDir(project);
 
