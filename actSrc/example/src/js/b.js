@@ -1,2 +1,2 @@
-const f = 888;
+const f = 'bbbbbb';
 export default f;

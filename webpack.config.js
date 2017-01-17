@@ -16,7 +16,7 @@ var extractSASS = new ExtractTextPlugin('css/[name].css?[hash:8]');
 var plugins = [];
 var entryObj = {};
 
-if(isProd === 'prod'){
+if(isProd){
 	plugins.push(
 		new webpack.optimize.UglifyJsPlugin({
 		    compress: {
@@ -65,7 +65,8 @@ module.exports = {
 	            loader: 'babel-loader',
 	            query: {
 	                presets: ['es2015', 'stage-2'],
-	                cacheDirectory:''
+	                cacheDirectory:'',
+	                plugins: ["transform-runtime"]
 	            }
 	        }, 
 	        {
@@ -83,7 +84,7 @@ module.exports = {
     'ejs-compiled-loader': {
 		'htmlmin': false,
 		'htmlminOptions': {
-			removeComments: true
+			removeComments: false
 		}
 	},
     postcss:[autoprefixer()],

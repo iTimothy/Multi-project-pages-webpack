@@ -1,14 +1,1 @@
-@charset "UTF-8";
-/**
- * 引用a.scss
- */
-div {
-  color: #fff; }
-
-body {
-  background-color: #a9e2ff; }
-
-img {
-  width: 80px; }
-
-/*# sourceMappingURL=index.css.map?500482d0*/
+div{color:#fff}body{background-color:#fdffd3}img{width:80px}

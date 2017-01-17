@@ -2,20 +2,25 @@
 多项目webpack构建
 
 ### directory
-- root     
-    - project(目录下除src都是构建后的文件)
-        - src (开发目录)
-            - images (图片)
-            - css (css文件)
-            - js (js文件)
-            - views (模版页面)
-            - page.js (模版页面配置) 
-        - images
-        - js
-        - css
-        - demo.html
-    - project2
-    - ...
+- Multi-project-pages-webpack
+    - actSrc    
+        - project(目录下除src都是构建后的文件)
+            - src (开发目录)
+                - images (图片)
+                - css (css文件)
+                - js (js文件)
+                - views (模版页面)
+                - page.js (模版页面配置) 
+            - images
+            - js
+            - css
+            - demo.html
+        - project2
+        - ...
+- webpack.config.js
+- base.js
+- package.json
+- .babelrc
 
 ### Usage
 
