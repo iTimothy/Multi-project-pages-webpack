@@ -38,3 +38,17 @@ npm run dev -- --src projectName
 #build
 npm run build -- --src projectName
 ```
+### page.js
+``` js
+module.exports = [
+    {
+        title: "demo",//页面title
+        filename: "index.html",
+        template: "views/index.ejs", //页面对应模版
+        chunks:["lib/g","index"],//页面entry
+        hash: true,
+        cache: true
+    }
+];
+```
+[page.js更多配置](https://github.com/ampedandwired/html-webpack-plugin#configuration,"page.js configuration")
