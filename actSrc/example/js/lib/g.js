@@ -42,50 +42,12 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	var _a = __webpack_require__(1);
-	
-	var _a2 = _interopRequireDefault(_a);
-	
-	var _b = __webpack_require__(2);
-	
-	var _b2 = _interopRequireDefault(_b);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	__webpack_require__(3);
-	
-	console.log(_b2.default);
-
-/***/ },
-/* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
 	
-	console.log('this is module a');
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var f = 'bbbbbb';
-	exports.default = f;
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
+	console.log('gggg');
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=g.js.map

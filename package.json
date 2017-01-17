@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --config webpack.config.js --inline --hot --progress --display-error-details --mode dev",
     "init": "webpack --progress --display-error-details --mode dev",
     "build": "webpack --progress --display-error-details --mode prod",
-    "watch": "webpack --mode dev -w --display-error-details"
+    "watch": "webpack --mode dev -w --display-error-details",
+    "tt": "webpack --progress --no-info --mode dev"
   },
   "author": "YingWu Zhang",
   "license": "MIT",

@@ -44,7 +44,7 @@ if(!isExists){
 var pageConfig = require(pageConfigFile);
 
 
-ScanDir(project);
+ScanDir(path.join(project,'src'));
 
 var sourceList = {
 	jsList:{},
@@ -53,13 +53,18 @@ var sourceList = {
 	cssList:{},
 	htmlList:{}
 };
+
+var jsStr = 'src/js/',strLen = jsStr.length;
 files.map((item,i)=>{
 
 	var extname = path.extname(item);
 	var basename = path.basename(item,extname);
+
 	switch(extname){
 		case '.js':
-			sourceList.jsList[basename] = item;
+			var temp = item.substring(item.indexOf(jsStr)+strLen);
+			var entryJs = temp.substring(0,temp.indexOf(extname));
+			sourceList.jsList[entryJs] = item;
 			break;
 		case '.gif':
 			sourceList.imgList[basename] = item;
