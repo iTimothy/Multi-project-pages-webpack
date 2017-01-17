@@ -1,5 +1,5 @@
 # Multi-project-pages-webpack
-多项目webpack构建
+多项目构建(webpack)
 
 ### directory
 - Multi-project-pages-webpack
