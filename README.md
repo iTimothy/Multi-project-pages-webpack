@@ -52,3 +52,32 @@ module.exports = [
 ];
 ```
 [page.js更多配置](https://github.com/ampedandwired/html-webpack-plugin#configuration,"page.js configuration")
+
+### 修改ejs-compiled-loader>index.js
+``` js
+var ejs = require('ejs'),
+  uglify = require('uglify-js');
+
+var getParam = function(name,url){
+        var reg = new RegExp("(^|&)" + name + "=([^$&]*)");
+        var r = url.substr(1).match(reg);
+        if (r != null) return decodeURIComponent(r[2]); return null;
+    };
+
+module.exports = function (source) {
+  this.cacheable && this.cacheable();
+  var template = ejs.compile(source, {
+    client: true,
+    filename: getParam('src',this.query),
+    webpack: this
+  });
+
+  var ast = uglify.parser.parse(template.toString());
+
+  return 'module.exports = ' + uglify.uglify.gen_code(ast, {beautify: true});
+};
+
+```
+
+### License
+MIT (http://www.opensource.org/licenses/mit-license.php)
