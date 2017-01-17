@@ -11,10 +11,10 @@
                 - js (js文件)
                 - views (模版页面)
                 - page.js (模版页面配置) 
-            - images
-            - js
-            - css
-            - demo.html
+            - images (dist)
+            - js (dist)
+            - css (dist)
+            - demo.html (dist)
         - project2
         - ...
 - webpack.config.js
