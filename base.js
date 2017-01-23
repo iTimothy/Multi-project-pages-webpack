@@ -1,16 +1,17 @@
+
 var files = [];
 var path = require('path');
 var fs = require('fs');
 var minimist = require('minimist');
 
-var root = 'actSrc';
+var root = 'actSrc'; //项目总目录
 
 var argv = minimist(process.argv.slice(2), {
     string: ['src', 'mode']
 });
 var src = argv.src;
 var mode = argv.mode;
-var isProd = argv.mode === 'prod' ? true : false;
+var isProd = argv.mode === 'prod' ? true : false; //运行模式
 
 var ScanDir = function(path) {
     var that = this

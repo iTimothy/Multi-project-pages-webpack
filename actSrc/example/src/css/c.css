@@ -1,3 +1,8 @@
-.tt{
-	color: #ff0a0a;
+.tt {
+    color: #ff0a0a;
+}
+
+.yt {
+    color: #0ee38f;
+    transition: all .5s;
 }
