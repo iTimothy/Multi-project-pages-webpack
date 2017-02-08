@@ -58,14 +58,13 @@ module.exports = [
 var ejs = require('ejs'),
   uglify = require('uglify-js');
 
-var getParam = function(name,url){
-        var reg = new RegExp("(^|&)" + name + "=([^$&]*)");
-        var r = url.substr(1).match(reg);
-        if (r != null) return decodeURIComponent(r[2]); return null;
-    };
-
 module.exports = function (source) {
   this.cacheable && this.cacheable();
+  var getParam = function(name,url){
+    var reg = new RegExp("(^|&)" + name + "=([^$&]*)");
+    var r = url.substr(1).match(reg);
+    if (r != null) return decodeURIComponent(r[2]); return null;
+  };
   var template = ejs.compile(source, {
     client: true,
     filename: getParam('src',this.query),
