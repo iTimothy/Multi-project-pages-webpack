@@ -95,9 +95,8 @@ module.exports = {
 		contentBase:dist,
 		colors: true,
 		historyApiFallback: true,
-		hot: true,
-		inline: true,
-		progress: true
+		inline: true
+		//progress: true
 	},
 	devtool: isProd ? '' : 'source-map'
 }
