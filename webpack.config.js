@@ -8,6 +8,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 var isProd = base.isProd;
+var publicPath = base.publicPath
 
 var dist = path.join(__dirname, base.root, base.projectName);
 var projectSrc = path.join(__dirname, base.root, base.projectName,'src/');
@@ -46,7 +47,7 @@ module.exports = {
         path: dist,
         filename: "js/[name].js",
         chunkFilename: "js/[chunkhash].js",
-        publicPath: isProd ? "./" : "/"
+        publicPath: isProd ? (publicPath ? '/acts/projects/'+base.projectName+'/' : "./") : "/"
     },
     resolve: {
 	    extensions: ['', '.coffee', '.js','.es6','.css','.scss','.png','.jpg','.jpeg','.gif']
@@ -73,7 +74,7 @@ module.exports = {
 	        }, 
 	        {
 	            test: /\.scss$/,
-	            loader: extractSASS.extract(['css','sass','postcss']),
+	            loader: extractSASS.extract(['css','postcss','sass']),
 	            exclude: /node_modules/
 	        },
 	        {
@@ -95,8 +96,10 @@ module.exports = {
 		contentBase:dist,
 		colors: true,
 		historyApiFallback: true,
-		inline: true
-		//progress: true
+		hot: true,
+		inline: true,
+		progress: true,
+		port:8088
 	},
 	devtool: isProd ? '' : 'source-map'
 }
