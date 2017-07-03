@@ -1,4 +1,3 @@
-
 var path = require('path');
 var base = require("./base");
 var webpack = require('webpack');
@@ -6,10 +5,10 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
+var mode = base.mode
 var isProd = base.isProd;
 var publicPath = base.publicPath
-// var kkwap = base.kkwap
+var isDevProd = mode === 'devprod'
 
 var dist = path.join(__dirname, base.root, base.projectName);
 var projectSrc = path.join(__dirname, base.root, base.projectName,'src/');
@@ -48,8 +47,7 @@ module.exports = {
         path: dist,
         filename: "js/[name].js",
         chunkFilename: "js/[chunkhash].js",
-        //publicPath: isProd ? (publicPath ?( !kkwap ? '/acts/projects/'+base.projectName+'/' : '/kkwap/acts/projects/'+base.projectName+'/' ): "./") : "/",
-        publicPath: isProd ? (publicPath === 'true' ? ('/acts/projects/'+base.projectName+'/') :  ( (publicPath !== '' && publicPath) ? '/'+publicPath+'/acts/projects/'+base.projectName+'/' : '/acts/projects/'+base.projectName+'/' )  ) : '/'
+        publicPath: (isProd || isDevProd) ? (publicPath === 'true' ? ('/acts/projects/'+base.projectName+'/') :  ( (publicPath !== '' && publicPath) ? '/'+publicPath+'/acts/projects/'+base.projectName+'/' : '/acts/projects/'+base.projectName+'/' )  ) : '/'
     },
     resolve: {
 	    extensions: ['', '.coffee', '.js','.es6','.css','.scss','.png','.jpg','.jpeg','.gif']
@@ -103,5 +101,5 @@ module.exports = {
 		progress: true,
 		port:8088
 	},
-	devtool: isProd ? '' : 'source-map'
+	devtool: (isProd && !isDevProd) ? '' : 'source-map'
 }
