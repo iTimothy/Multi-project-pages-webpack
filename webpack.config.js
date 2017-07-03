@@ -9,6 +9,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var isProd = base.isProd;
 var publicPath = base.publicPath
+// var kkwap = base.kkwap
 
 var dist = path.join(__dirname, base.root, base.projectName);
 var projectSrc = path.join(__dirname, base.root, base.projectName,'src/');
@@ -47,7 +48,8 @@ module.exports = {
         path: dist,
         filename: "js/[name].js",
         chunkFilename: "js/[chunkhash].js",
-        publicPath: isProd ? (publicPath ? '/acts/projects/'+base.projectName+'/' : "./") : "/"
+        //publicPath: isProd ? (publicPath ?( !kkwap ? '/acts/projects/'+base.projectName+'/' : '/kkwap/acts/projects/'+base.projectName+'/' ): "./") : "/",
+        publicPath: isProd ? (publicPath === 'true' ? ('/acts/projects/'+base.projectName+'/') :  ( (publicPath !== '' && publicPath) ? '/'+publicPath+'/acts/projects/'+base.projectName+'/' : '/acts/projects/'+base.projectName+'/' )  ) : '/'
     },
     resolve: {
 	    extensions: ['', '.coffee', '.js','.es6','.css','.scss','.png','.jpg','.jpeg','.gif']

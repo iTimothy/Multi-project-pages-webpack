@@ -7,8 +7,7 @@
     "dev": "webpack-dev-server --config webpack.config.js --inline --hot --progress --display-error-details --mode dev",
     "init": "webpack --progress --display-error-details --mode dev",
     "build": "webpack --progress --display-error-details --mode prod",
-    "watch": "webpack --mode dev -w --display-error-details",
-    "tt": "webpack --progress --no-info --mode dev"
+    "watch": "webpack --mode dev -w --display-error-details"
   },
   "author": "YingWu Zhang",
   "license": "MIT",
@@ -23,7 +22,6 @@
     "babel-register": "^6.0.0",
     "babel-runtime": "^6.18.0",
     "chalk": "^1.1.3",
-    "clean-webpack-plugin": "^0.1.15",
     "connect-history-api-fallback": "^1.1.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.25.0",

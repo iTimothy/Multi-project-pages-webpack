@@ -7,12 +7,14 @@ var minimist = require('minimist');
 var root = 'projects'; //项目总目录
 
 var argv = minimist(process.argv.slice(2), {
-    string: ['src', 'mode','ph']
+    string: ['src', 'mode','ph','kkwap']
 });
 var src = argv.src;
 var mode = argv.mode;
 var isProd = argv.mode === 'prod' ? true : false; //运行模式
-var publicPath = (argv.ph != '' && argv.ph) ? true : false
+//var publicPath = (argv.ph != '' && argv.ph) ? true : false
+var publicPath = argv.ph
+// var kkwap = (argv.kkwap != '' && argv.kkwap) ? true : false
 
 var ScanDir = function(path) {
     var that = this
@@ -99,4 +101,5 @@ module.exports = {
 	isProd: isProd,
 	root: root,
 	publicPath: publicPath
+/*	kkwap : kkwap*/
 };
