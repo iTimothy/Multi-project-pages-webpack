@@ -35,8 +35,12 @@ npm install
 npm run init -- --src projectName
 # dev 
 npm run dev -- --src projectName
-#build
+# devbuild
+npm run devbuild -- --src projectName
+npm run devbuild -- --src projectName --ph 自定义publicPath
+# build
 npm run build -- --src projectName
+npm run build -- --src projectName --ph 自定义publicPath
 ```
 ### page.js
 ``` js
