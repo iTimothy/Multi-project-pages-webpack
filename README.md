@@ -3,7 +3,7 @@
 
 ### directory
 - Multi-project-pages-webpack
-    - actSrc    
+    - acts    
         - project(目录下除src都是构建后的文件)
             - src (开发目录)
                 - images (图片)
