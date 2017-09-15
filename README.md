@@ -5,7 +5,7 @@
 - Multi-project-pages-webpack
     - acts    
         - project(目录下除src都是构建后的文件)
-            - src (开发目录)
+            - src (dev 目录)
                 - images (图片)
                 - css (css文件)
                 - js (js文件)
@@ -33,31 +33,35 @@ cd Multi-project-pages-webpack
 npm install
 # init the project
 npm run init -- --src projectName
+or
+npm run dev -- --src projectName
 # dev 
 npm run dev -- --src projectName
-# devbuild
+# devbuild 
+#### dev build
 npm run devbuild -- --src projectName
-npm run devbuild -- --src projectName --ph 自定义publicPath
+npm run devbuild -- --src projectName --ph  [publicPath customize]
 # build
+#### production build
 npm run build -- --src projectName
-npm run build -- --src projectName --ph 自定义publicPath
+npm run build -- --src projectName --ph  [publicPath customize 自定义publicpath]
 ```
 ### page.js
 ``` js
 module.exports = [
     {
-        title: "demo",//页面title
+        title: "demo",//page title
         filename: "index.html",
-        template: "views/index.ejs", //页面对应模版
-        chunks:["lib/g","index"],//页面entry
+        template: "views/index.ejs", //page template
+        chunks:["lib/g","index"],//page entry
         hash: true,
         cache: true
     }
 ];
 ```
-[page.js更多配置](https://github.com/ampedandwired/html-webpack-plugin#configuration,"page.js configuration")
+[page.js more configuration](https://github.com/ampedandwired/html-webpack-plugin#configuration,"page.js configuration")
 
-### 修改ejs-compiled-loader>index.js
+### modify ejs-compiled-loader>index.js
 ``` js
 var ejs = require('ejs'),
   uglify = require('uglify-js');

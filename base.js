@@ -100,6 +100,7 @@ module.exports = {
 	pageConfig: pageConfig,
 	isProd: isProd,
 	root: root,
-	publicPath: publicPath
+	publicPath: publicPath,
+	mode: mode
 /*	kkwap : kkwap*/
 };
