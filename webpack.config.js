@@ -97,13 +97,31 @@ module.exports = {
     plugins:plugins,
 	devServer: {
 		contentBase:dist,
+		outputPath: dist,
 		colors: true,
 		historyApiFallback: true,
 		hot: true,
 		inline: true,
 		progress: true,
 		port:8088,
-		autoOpenBrowser: true
+		autoOpenBrowser: true,
+		proxy: {
+	        '/kkapi': {
+	          target: 'http://192.168.1.240/',
+	          pathRewrite: {'^/kkapi' : '/kkapi'},
+	          changeOrigin: true
+	        },
+	        '/Kkzc': {
+	          target: 'http://192.168.1.240/',
+	          pathRewrite: {'^/Kkzc' : '/Kkzc'},
+	          changeOrigin: true
+	        },
+	        '/resources': {
+	          target: 'http://192.168.1.240/',
+	          pathRewrite: {'^/resources' : '/resources'},
+	          changeOrigin: true
+	        }
+	    }
 	},
 	devtool: (isProd && !isDevProd) ? '' : 'source-map'
 }
