@@ -1,5 +1,4 @@
-# Multi-project-pages-webpack
-多项目构建(webpack)
+# Multi-project-pages-webpack 多项目
 
 ### directory
 - Multi-project-pages-webpack
@@ -40,11 +39,11 @@ npm run dev -- --src projectName
 # devbuild 
 #### dev build
 npm run devbuild -- --src projectName
-npm run devbuild -- --src projectName --ph  [publicPath customize]
+npm run devbuild -- --src projectName [--ph  (publicPath customize)]
 # build
 #### production build
 npm run build -- --src projectName
-npm run build -- --src projectName --ph  [publicPath customize 自定义publicpath]
+npm run build -- --src projectName [--ph  (publicPath customize 自定义publicpath)]
 ```
 ### page.js
 ``` js
